@@ -1,0 +1,13 @@
+###
+GET http://localhost:8080/hello
+Cookie: 123123ASDasd
+
+###
+GET localhost:8080/index
+
+###
+GET localhost:8080
+
+###
+POST http://localhost:8080/hello
+
