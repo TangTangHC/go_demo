@@ -68,6 +68,7 @@ func (r *router) getRouter(method string, path string) (*node, map[string]string
 				break
 			}
 		}
+		return n, params
 	}
 	return nil, nil
 }

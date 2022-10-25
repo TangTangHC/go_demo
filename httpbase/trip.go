@@ -13,7 +13,7 @@ type node struct {
 }
 
 func (n *node) String() string {
-	return fmt.Sprintf("node{pattern=%s, part=%s, isWild=%tm, children=%s\n}", n.pattern, n.part, n.isWild, n.children)
+	return fmt.Sprintf("node{pattern=%s, part=%s, isWild=%t, children=%s\n}", n.pattern, n.part, n.isWild, n.children)
 }
 
 func (n *node) matchChild(part string) *node {
