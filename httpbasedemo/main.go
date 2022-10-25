@@ -1,42 +1,28 @@
 package main
 
 import (
-	"fmt"
 	"go-demo/httpbase"
 	"net/http"
 )
 
-type Engine struct{}
-
-func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	switch req.URL.Path {
-	case "/":
-		fmt.Fprintf(w, "URL.Path = %q\n", req.URL.Path)
-	case "/hello":
-		for k, v := range req.Header {
-			fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
-		}
-	default:
-		fmt.Fprintf(w, "404 NOT FOUNT: %s\n", req.URL)
-	}
-}
-
 func main() {
-	//engine := new(Engine)
-	//log.Fatalln(http.ListenAndServe(":8080", engine))
-
 	engine := httpbase.New()
-	engine.Get("/index", indexHandler)
-	engine.Post("/hello", helloHandler)
+	engine.Get("/", func(ctx *httpbase.Context) {
+		ctx.HTML(http.StatusOK, "<h1>Hello Gee</h1>")
+	})
+	engine.Get("/hello", func(ctx *httpbase.Context) {
+		ctx.String(http.StatusOK, "hello %s, you're at %s\n", ctx.Query("name"), ctx.Path)
+	})
+	engine.Post("/login", func(ctx *httpbase.Context) {
+		ctx.Json(http.StatusOK, httpbase.H{
+			"userName": ctx.PostForm("userName"),
+			"password": ctx.PostForm("password"),
+		})
+	})
+	engine.Post("/userInfo", func(ctx *httpbase.Context) {
+		b := ctx.PostBody()
+		ctx.Json(http.StatusOK, b)
+	})
 	engine.Run(":8080")
-}
 
-func indexHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "URL.path = %q\n", req.URL.Path)
-}
-
-func helloHandler(w http.ResponseWriter, req *http.Request) {
-	for k, v := range req.Header {
-		fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
-	}
 }

@@ -1,9 +1,17 @@
+# curl "http://localhost:9999/login" -X POST -d 'username=geektutu&password=1234'
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+userName=thc&password=1234
+
+###
+
 ###
 GET http://localhost:8080/hello
 Cookie: 123123ASDasd
 
 ###
-GET localhost:8080/index
+GET localhost:8080/
 
 ###
 GET localhost:8080
@@ -11,3 +19,8 @@ GET localhost:8080
 ###
 POST http://localhost:8080/hello
 
+###
+POST http://localhost:8080/userInfo
+Content-Type: application/json
+
+{"id": "hhhhh"}
