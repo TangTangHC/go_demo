@@ -1,7 +1,6 @@
 package httpbase
 
 import (
-	"log"
 	"net/http"
 	"strings"
 )
@@ -35,7 +34,7 @@ func parsePattern(pattern string) []string {
 }
 
 func (r *router) addRouter(method string, pattern string, handlerFunc HandlerFunc) {
-	log.Printf("Router %s - %s", method, pattern)
+	//log.Printf("Router %s - %s", method, pattern)
 
 	parts := parsePattern(pattern)
 	_, ok := r.roots[method]
@@ -77,7 +76,7 @@ func (r *router) handle(c *Context) {
 	n, params := r.getRouter(c.Method, c.Path)
 	if n != nil {
 		c.Params = params
-		key := c.Method + "-" + c.Path
+		key := c.Method + "-" + n.pattern
 		r.handlers[key](c)
 	} else {
 		c.String(http.StatusNotFound, "404 NOT FOUND: %s\n", c.Path)

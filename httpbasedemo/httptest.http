@@ -7,20 +7,22 @@ userName=thc&password=1234
 ###
 
 ###
-GET http://localhost:8080/hello
-Cookie: 123123ASDasd
+GET http://localhost:8080/v1/hello
 
 ###
-GET localhost:8080/
+GET localhost:8080/index
 
 ###
 GET localhost:8080
 
 ###
-POST http://localhost:8080/hello
+GET http://localhost:8080/hello/thc
 
 ###
 POST http://localhost:8080/userInfo
 Content-Type: application/json
 
 {"id": "hhhhh"}
+
+###
+GET http://localhost:8080/assets/css/thc.css
