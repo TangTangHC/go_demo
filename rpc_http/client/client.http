@@ -1,0 +1,6 @@
+POST http://localhost:1234/jsonrpc
+Content-Type: application/json
+
+{"method":  "HelloService.Hello", "id": 0, "params":  ["thc"]}
+
+###

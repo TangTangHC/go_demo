@@ -17,6 +17,4 @@ func main() {
 	}
 	fmt.Println(reply)
 
-	// rpc调用需要解决的问题：1、call id 2、序列化和反序列化
-
 }
