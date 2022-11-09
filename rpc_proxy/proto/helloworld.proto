@@ -1,2 +1,8 @@
 syntax = "proto3";
+option go_package = "./";
 
+message HelloRequest {
+  string name = 1; // 1是编号不是值
+  int32 age = 2;
+  repeated string courses = 3;
+}
