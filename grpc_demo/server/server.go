@@ -8,7 +8,9 @@ import (
 	"go-demo/grpc_demo/proto"
 )
 
-type Server struct{}
+type Server struct {
+	proto.UnimplementedGreeterServer
+}
 
 func (s Server) SayHello(ctx context.Context, request *proto.HelloRequest) (*proto.HelloReply, error) {
 	return &proto.HelloReply{
