@@ -1,0 +1,10 @@
+syntax = "proto3";
+option go_package = "../proto";
+message Pong{
+  string id = 1;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}

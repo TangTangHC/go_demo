@@ -1,16 +1,33 @@
 syntax = "proto3";
-
-option go_package="../proto";
+import "base.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+option go_package = "../proto";
 
 service Greeter {
   rpc SayHello(HelloRequest) returns (HelloReply);
+  rpc Ping(google.protobuf.Empty) returns (Pong);
 }
 
 
 message HelloRequest {
-  string name = 1;
+  int32 id = 1;
+  string name = 2;
+  repeated string titles = 3;
+  bool isDelete = 4;
+  sint32 score = 5; // sint对于复数支持会更好
+  bytes file = 6;
+  map<string, string> map = 7;
+  google.protobuf.Timestamp addTime = 8;
 }
 
 message HelloReply {
   string msg = 1;
+  Gender sex = 2;
+  repeated Result results = 3;
+  message Result {
+    string name = 1;
+    string url = 2;
+  }
 }
+
