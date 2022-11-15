@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"go-demo/grpc_stream/proto"
+	"go_demo/grpc_stream/proto"
 )
 
 const PORT = ":50052"

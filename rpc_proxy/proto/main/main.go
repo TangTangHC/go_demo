@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	__ "go-demo/rpc_proxy/proto"
+	__ "go_demo/rpc_proxy/proto"
 )
 
 func main() {

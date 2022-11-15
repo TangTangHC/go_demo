@@ -3,7 +3,7 @@ package server_proxy
 import (
 	"net/rpc"
 
-	"go-demo/rpc_proxy/handler"
+	"go_demo/rpc_proxy/handler"
 )
 
 type HelloServicer interface {

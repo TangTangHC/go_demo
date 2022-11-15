@@ -1,4 +1,4 @@
-module go-demo
+module go_demo
 
 go 1.19
 

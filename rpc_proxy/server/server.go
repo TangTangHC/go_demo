@@ -1,12 +1,12 @@
 package main
 
 import (
-	"go-demo/rpc_proxy/server_proxy"
+	"go_demo/rpc_proxy/server_proxy"
 	"net"
 	"net/rpc"
 	"net/rpc/jsonrpc"
 
-	"go-demo/rpc_proxy/handler"
+	"go_demo/rpc_proxy/handler"
 )
 
 func main() {

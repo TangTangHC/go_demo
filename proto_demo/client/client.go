@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 	"time"
 
-	"go-demo/proto_demo/proto"
+	"go_demo/proto_demo/proto"
 )
 
 func main() {

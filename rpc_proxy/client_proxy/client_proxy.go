@@ -5,7 +5,7 @@ import (
 	"net/rpc"
 	"net/rpc/jsonrpc"
 
-	"go-demo/rpc_proxy/handler"
+	"go_demo/rpc_proxy/handler"
 )
 
 type HelloServiceStub struct {

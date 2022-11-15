@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"go-demo/grpc_demo/proto"
+	"go_demo/grpc_demo/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/metadata"

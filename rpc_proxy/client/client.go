@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-demo/rpc_proxy/client_proxy"
+	"go_demo/rpc_proxy/client_proxy"
 )
 
 func main() {

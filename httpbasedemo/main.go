@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-demo/httpbase"
+	"go_demo/httpbase"
 	"net/http"
 )
 
