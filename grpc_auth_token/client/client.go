@@ -13,7 +13,7 @@ func main() {
 	interceptor := func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
 		t := time.Now()
 		md := metadata.New(map[string]string{
-			"token": "thc1",
+			"token": "thc1 ",
 		})
 		ctx = metadata.NewOutgoingContext(ctx, md)
 		err := invoker(ctx, method, req, reply, cc, opts...)
